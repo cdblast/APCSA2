@@ -38,9 +38,15 @@ public class Game
     {
       System.out.println("\nPieces remaining: " + Board.getPieces());
 
-      int maxTake = Board.getPieces() / 2;
-      if(maxTake < 1)
-        maxTake = 1;
+      int maxTake = 1;
+      
+      if (Board.getPieces() > 3){
+        maxTake = Board.getPieces() / 2;
+      }
+      else if(Board.getPieces() == 3){
+        maxTake = 2;
+      }
+
 
       System.out.println(currentPlayer.getName() + "'s turn.");
       System.out.println("You may take 1 to " + maxTake + " pieces.");
